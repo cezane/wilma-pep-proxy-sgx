@@ -7,6 +7,7 @@ var config = require('./config'),
 
 config.azf = config.azf || {};
 config.https = config.https || {};
+config.sgx_attest = config.sgx_attest || {};
 
 var log = require('./lib/logger').logger.getLogger("Server");
 
