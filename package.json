@@ -1,0 +1,41 @@
+{
+  "name": "fiware-pep-proxy",
+  "version": "0.1.0",
+  "description": "PEP oauth2 authentication proxy for FIWARE GE services",
+  "author": "GING DIT UPM",
+  "dependencies": {
+    "asn1js": "^2.0.12",
+    "bn": "^1.0.1",
+    "eccrypto": "^1.0.3",
+    "ecdsa": "^0.7.0",
+    "errorhandler": "1.x",
+    "escape-html": "1.0.3",
+    "express": "4.x",
+    "log4js": "0.6.x",
+    "mocha": "~1.20.1",
+    "node-libcurl": "^1.1.0",
+    "secureworker": "^0.1.4",
+    "should": "~4.0.4",
+    "xml2js": "0.4.17",
+    "xml2json": "0.9.0",
+    "xmlhttprequest": "1.8.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ging/fiware-pep-proxy"
+  },
+  "contributors": [
+    {
+      "name": "Alvaro Alonso",
+      "email": "aalonsog@dit.upm.es"
+    },
+    {
+      "name": "Javier Cerviño",
+      "email": "jcervino@dit.upm.es"
+    }
+  ],
+  "scripts": {
+    "start": "node server.js",
+    "test": "./node_modules/.bin/mocha sanity/test.js -R spec"
+  }
+}
