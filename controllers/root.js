@@ -10,6 +10,7 @@ var log = require('./../lib/logger').logger.getLogger("Root");
 
 var attestSocket = zmq.socket('req');
 var sharedKey;
+
 const libcurl = require('node-libcurl').Curl;
 var curl;
 const fs = require('fs');
@@ -18,6 +19,7 @@ const aesCmac = require('node-aes-cmac').aesCmac;
 const format = require('sprintf');
 var EC = require("elliptic").ec;
 var ec = new EC("p256");
+
 const X_LENGTH = 32;
 const Y_LENGTH = 64;
 const MSG0 = 0;
@@ -26,7 +28,6 @@ const MSG2 = 2;
 const MSG3 = 3;
 const MSG4 = 4;
 const MSG_SUCCESS = 5;
-
 
 //TODO CHECK IF ATTESTATION PROCESS WILL BE DONE...
 
@@ -74,6 +75,7 @@ var Root = (function() {
                     
                     AZF.check_permissions(auth_token, user_info, req, function () {
                       log.info('User roles --> ', user_info.roles);
+
                       if (config.sgx_attest.enabled) {
                          var role = '';
                          var attested = false;
@@ -116,7 +118,7 @@ var Root = (function() {
                       } else {
                           redir_request(req, res, user_info);
                       }
-                    }, function (status, e) {
+                   }, function (status, e) {
 
                         if (status === 401) {
                             log.error('User access-token not authorized: ', e);
